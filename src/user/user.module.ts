@@ -3,10 +3,11 @@ import { UserService } from './services/user.service';
 import { UserController } from './controllers/user.controller';
 import { ShareModule } from '../shared/shared.module';
 import { UserProviders } from './user.providers';
+import { AuthController } from './controllers/auth.controller';
 
 @Module({
-  controllers: [UserController],
+  controllers: [UserController, AuthController],
   providers: [UserService, ...UserProviders],
-  imports: [ShareModule]
+  imports: [ShareModule],
 })
-export class UserModule { }
+export class UserModule {}

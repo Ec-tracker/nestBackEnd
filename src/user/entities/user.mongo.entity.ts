@@ -1,4 +1,4 @@
-import { Common } from 'src/shared/entities/common.entity';
+import { Common } from '../../shared/entities/common.entity';
 import { Column, Entity, ObjectID, ObjectIdColumn } from 'typeorm';
 
 @Entity()
@@ -8,4 +8,13 @@ export class User extends Common {
 
   @Column({ length: 200 })
   email: string;
+
+  @Column({
+    type: 'text',
+    select: false,
+  })
+  salt: string;
+
+  @Column()
+  password: string;
 }
