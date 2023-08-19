@@ -8,4 +8,7 @@ export class User extends Common {
 
   @Column({ length: 200 })
   email: string;
+
+  @Column()
+  password: string;
 }

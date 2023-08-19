@@ -16,10 +16,13 @@ export class CreateUserDto {
 
   @ApiProperty({ example: '111111' })
   @IsNotEmpty()
-  @Length(6, 10)
+  @Length(6, 10, { message: '密码长度为6-10' })
   password: string;
 
   @ApiProperty({ example: 'aa@qq.com' })
   @IsEmail()
   email: string;
+
+  @ApiProperty({ example: 'admain' })
+  name: string;
 }

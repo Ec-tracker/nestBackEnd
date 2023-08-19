@@ -9,6 +9,7 @@ import {
   HttpStatus,
   HttpException,
   Query,
+  UseFilters,
 } from '@nestjs/common';
 import { UserService } from '../services/user.service';
 import { CreateUserDto } from '../dtos/create-user.dto';
@@ -21,9 +22,11 @@ import {
 } from '@nestjs/swagger';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { PaginationParamsDto } from '../../shared/dtos/pagination-params.dto';
+import { ValidationExcetptionFilter } from 'src/shared/filters/ValidatorExceptionFilter';
 
 @Controller('user')
 @ApiTags('用户管理')
+@UseFilters(ValidationExcetptionFilter)
 export class UserController {
   constructor(
     private readonly userService: UserService,

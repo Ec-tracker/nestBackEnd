@@ -20,6 +20,7 @@ export class UserService {
   }
 
   create(createUserDto: CreateUserDto) {
+    console.log(createUserDto);
     // this.logger.info(null, 'User Create ....', {
     //   a: 123
     // })
@@ -32,8 +33,7 @@ export class UserService {
     // 调用Modle
     // return 'This action adds a 🚀 new user';
     return this.userRepository.save({
-      name: 'haha',
-      email: '1@1.com',
+      ...createUserDto,
     });
   }
 
