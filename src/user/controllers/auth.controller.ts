@@ -44,8 +44,6 @@ export class AuthController {
   @HttpCode(200)
   @Post('Login')
   async login(@Body() loginDTO: LoginDTO) {
-    throw new HttpException('http cuowu', 400);
-
     return this.authService.login(loginDTO);
   }
 

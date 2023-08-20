@@ -60,7 +60,7 @@ export class AuthService {
 
     return {
       ...user,
-      seesionId: `Bearer ${token}`,
+      sessionId: `Bearer ${token}`,
     };
   }
 
